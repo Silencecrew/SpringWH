@@ -1,0 +1,13 @@
+org\example\Exception\DuplicateEmailException.class
+org\example\Dto\UpdateUserRequest.class
+org\example\Exception\ValidationException.class
+org\example\Dto\CreateUserRequest.class
+org\example\kafkaConfig\KafkaConfig.class
+org\example\Entity\User.class
+org\example\controller\UserController.class
+org\example\repository\UserRepository.class
+org\example\Service\UserServiceImpl.class
+org\example\Exception\UserNotFoundException.class
+org\example\Service\UserService.class
+org\example\App.class
+org\example\Dto\UserDto.class
