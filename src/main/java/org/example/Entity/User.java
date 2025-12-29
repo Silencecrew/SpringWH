@@ -1,26 +1,43 @@
 package org.example.Entity;
 
+import io.swagger.v3.oas.annotations.media.Schema;
+
 import javax.persistence.*;
 import java.io.Serializable;
 
 @Entity
 @Table(name="users")
+@Schema(description = "Модель данных юзера")
 public class User implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "user_id")
-    private Integer userId; // Изменено с int на Integer
+    @Schema(description = "Уникальный идентификатор юзера",
+            example = "123")
+    private Integer userId;
 
     @Column(name = "user_name", nullable = false)
+    @Schema(description = "Имя юзера",
+            example = "Матвей",
+            requiredMode = Schema.RequiredMode.REQUIRED)
     private String userName;
 
     @Column(name = "user_email", nullable = false, unique = true)
+    @Schema(description = "Почта юзера",
+            example = "test@gmail.com",
+            requiredMode = Schema.RequiredMode.REQUIRED)
     private String userEmail;
 
     @Column(name = "user_age", nullable = false)
-    private Integer userAge; // Изменено с int на Integer
+    @Schema(description = "Возраст юзера",
+            example = "30",
+            minimum = "0", maximum = "80",
+            requiredMode = Schema.RequiredMode.REQUIRED)
+    private Integer userAge;
 
     @Column(name = "user_created_at", nullable = false)
+    @Schema(description = "Дата создания юзера",
+            example = "2022-07-01T15:00:00+01")
     private String userCreatedAt;
 
     public User() {}
