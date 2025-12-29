@@ -1,6 +1,10 @@
 package org.example.Dto;
 
-public class UserDto {
+import org.springframework.hateoas.RepresentationModel;
+import org.springframework.hateoas.server.core.Relation;
+
+@Relation(collectionRelation = "users", itemRelation = "user")
+public class UserDto extends RepresentationModel<UserDto> {
     private int id;
     private String name;
     private int age;
