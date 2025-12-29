@@ -24,7 +24,7 @@ public class User implements Serializable {
 
     @Column(name = "user_email", nullable = false, unique = true)
     @Schema(description = "Почта юзера",
-            example = "test@gmail.com",
+            example = "testemail@gmail.com",
             requiredMode = Schema.RequiredMode.REQUIRED)
     private String userEmail;
 
